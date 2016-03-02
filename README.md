@@ -1,0 +1,2 @@
+# Fudge
+Collaborative recipe app
