@@ -1,6 +1,16 @@
 # Fudge
 **Fudge** is a collaborative recipe app where people can add new recipes or build off of recipes already submitted by other users.
 
+# Data Model
+
+| User|    Collection | Recipes |
+--------- | ----------| ---------|
+UserName  |  RecipeID | ID
+Profile Picture| Collaborators(UserNames[strings]) |     | Ingredients
+	|	|     | Description
+	|	|     | Picture
+	| 	|     | Steps
+	|	|     |  				
 #Required User Stories 
 - [ ] User can login/authenticate using Firebase Login
 - [ ] Users can add recipes via an in app interface
