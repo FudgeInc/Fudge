@@ -7,11 +7,11 @@
 --------- | ----------| ---------|
 UserName  |  Recipes[RecipeID] | RecipeID
 ProfilePicture| Collaborators[UserNames] | Ingredients
-	|     | Description
+	| Owner | Description
 	|     | Picture
 	|     | Steps
 	|     | Creator
-	|     | URLs
+	|     | Url
 #Required User Stories 
 - [ ] User can login/authenticate using Firebase Login
 - [ ] Users can add recipes via an in app interface
