@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E80A1D21C35B01EFEC1C343 /* Pods_Fudge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB8E19ACD51A927170A8174C /* Pods_Fudge.framework */; };
 		8C7308D11C866AB0000E5588 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7308D01C866AB0000E5588 /* AppDelegate.swift */; };
 		8C7308D31C866AB0000E5588 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7308D21C866AB0000E5588 /* ViewController.swift */; };
 		8C7308D61C866AB0000E5588 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C7308D41C866AB0000E5588 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		296C5816673CE8CF65F18502 /* Pods-Fudge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fudge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fudge/Pods-Fudge.debug.xcconfig"; sourceTree = "<group>"; };
 		8C7308CD1C866AB0000E5588 /* Fudge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fudge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C7308D01C866AB0000E5588 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C7308D21C866AB0000E5588 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +24,8 @@
 		8C7308D71C866AB0000E5588 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C7308DA1C866AB0000E5588 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8C7308DC1C866AB0000E5588 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		975E4A0FB9F00EF16C526C5A /* Pods-Fudge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fudge.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fudge/Pods-Fudge.release.xcconfig"; sourceTree = "<group>"; };
+		FB8E19ACD51A927170A8174C /* Pods_Fudge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fudge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E80A1D21C35B01EFEC1C343 /* Pods_Fudge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				8C7308CF1C866AB0000E5588 /* Fudge */,
 				8C7308CE1C866AB0000E5588 /* Products */,
+				F627D507DF38455135F4677E /* Pods */,
+				CB38025F221CA1B8D0EB5BD5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +71,23 @@
 			path = Fudge;
 			sourceTree = "<group>";
 		};
+		CB38025F221CA1B8D0EB5BD5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FB8E19ACD51A927170A8174C /* Pods_Fudge.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F627D507DF38455135F4677E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				296C5816673CE8CF65F18502 /* Pods-Fudge.debug.xcconfig */,
+				975E4A0FB9F00EF16C526C5A /* Pods-Fudge.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8C7308DF1C866AB0000E5588 /* Build configuration list for PBXNativeTarget "Fudge" */;
 			buildPhases = (
+				BC5B652C4EF7CDEF48CFDC53 /* Check Pods Manifest.lock */,
 				8C7308C91C866AB0000E5588 /* Sources */,
 				8C7308CA1C866AB0000E5588 /* Frameworks */,
 				8C7308CB1C866AB0000E5588 /* Resources */,
+				8BB00310C257004C6104968C /* Embed Pods Frameworks */,
+				058FCEE11890C2F9596CEF12 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,6 +157,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		058FCEE11890C2F9596CEF12 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Fudge/Pods-Fudge-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8BB00310C257004C6104968C /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Fudge/Pods-Fudge-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC5B652C4EF7CDEF48CFDC53 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8C7308C91C866AB0000E5588 /* Sources */ = {
@@ -248,6 +323,7 @@
 		};
 		8C7308E01C866AB0000E5588 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 296C5816673CE8CF65F18502 /* Pods-Fudge.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Fudge/Info.plist;
@@ -259,6 +335,7 @@
 		};
 		8C7308E11C866AB0000E5588 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 975E4A0FB9F00EF16C526C5A /* Pods-Fudge.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Fudge/Info.plist;
@@ -287,6 +364,7 @@
 				8C7308E11C866AB0000E5588 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
