@@ -13,9 +13,9 @@ ProfilePicture| Collaborators[UserNames] | Ingredients
 	|     | Creator
 	|     | Url
 #Required User Stories 
-- [ ] User can login/authenticate using Firebase Login
+- [ ] User can login/authenticate using Parse Login
 - [ ] Users can add recipes via an in app interface
-- [ ] Recipes are stored on a Firebase instance
+- [ ] Recipes are stored on a Parce instance
 - [ ] User can make a collaborative recipe collection using the user interaface
 - [ ] User can authenitcate/add a user(s) to edit collaborate on a recipe book
 
