@@ -13,7 +13,7 @@ ProfilePicture| Collaborators[UserNames] | Ingredients
 	|     | Creator
 	|     | Url
 	
-|User|
+###User
 |--------| ----|
 |Atrribute|Type|
 |---------|----|
