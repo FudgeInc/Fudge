@@ -5,8 +5,8 @@
 
 | User|    Collection | Recipes |
 --------- | ----------| ---------|
-UserName  |  RecipeID | ID
-Profile Picture| Collaborators(UserNames[strings]) | Ingredients
+UserName  |  Recipes[RecipeID] | ID
+Profile Picture| Collaborators[UserNames] | Ingredients
 	|     | Description
 	|     | Picture
 	|     | Steps
