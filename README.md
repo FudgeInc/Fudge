@@ -13,9 +13,15 @@ ProfilePicture| Collaborators[UserNames] | Ingredients
 	|     | Creator
 	|     | Url
 	
+***User***
+
 |Atrribute|Type|
 |---------|----|
-|`Hello`    | world|
+|`UserName`| String|
+|`ProfilePicture`| Image|
+
+
+
 #Required User Stories 
 - [ ] User can login/authenticate using Parse Login
 - [ ] Users can add recipes via an in app interface
