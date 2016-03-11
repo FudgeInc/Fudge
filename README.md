@@ -6,11 +6,11 @@
 | User|    Collection | Recipes |
 --------- | ----------| ---------|
 UserName  |  RecipeID | ID
-Profile Picture| Collaborators(UserNames[strings]) |     | Ingredients
-	|	|     | Description
-	|	|     | Picture
-	| 	|     | Steps
-	|	|     |  				
+Profile Picture| Collaborators(UserNames[strings]) | Ingredients
+	|     | Description
+	|     | Picture
+	|     | Steps
+	|     |  				
 #Required User Stories 
 - [ ] User can login/authenticate using Firebase Login
 - [ ] Users can add recipes via an in app interface
