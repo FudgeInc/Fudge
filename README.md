@@ -13,8 +13,7 @@ ProfilePicture| Collaborators[UserNames] | Ingredients
 	|     | Creator
 	|     | Url
 	
-***User***
-___
+|User|
 |Atrribute|Type|
 |---------|----|
 |`UserName`| String|
