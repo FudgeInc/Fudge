@@ -14,6 +14,7 @@ ProfilePicture| Collaborators[UserNames] | Ingredients
 	|     | Url
 	
 |User|
+|--------|
 |Atrribute|Type|
 |---------|----|
 |`UserName`| String|
