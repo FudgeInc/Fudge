@@ -3,16 +3,6 @@
 
 # Data Model
 
-| User|    Collection | Recipes |
---------- | ----------| ---------|
-UserName  |  Recipes[RecipeID] | RecipeID
-ProfilePicture| Collaborators[UserNames] | Ingredients
-	| Owner | Description
-	|     | Picture
-	|     | Steps
-	|     | Creator
-	|     | Url
-	
 ###User
 
 |Atrribute|Type|
