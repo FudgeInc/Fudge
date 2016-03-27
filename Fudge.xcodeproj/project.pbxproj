@@ -7,19 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00BC66E61CA84CC500C214DA /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BC66E51CA84CC500C214DA /* CollectionViewController.swift */; };
+		00BC66E81CA84DE000C214DA /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BC66E71CA84DE000C214DA /* FriendsViewController.swift */; };
+		00BC66EA1CA84EBC00C214DA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BC66E91CA84EBC00C214DA /* LoginViewController.swift */; };
 		1E80A1D21C35B01EFEC1C343 /* Pods_Fudge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB8E19ACD51A927170A8174C /* Pods_Fudge.framework */; };
 		8C7308D11C866AB0000E5588 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7308D01C866AB0000E5588 /* AppDelegate.swift */; };
-		8C7308D31C866AB0000E5588 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7308D21C866AB0000E5588 /* ViewController.swift */; };
 		8C7308D61C866AB0000E5588 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C7308D41C866AB0000E5588 /* Main.storyboard */; };
 		8C7308D81C866AB0000E5588 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C7308D71C866AB0000E5588 /* Assets.xcassets */; };
 		8C7308DB1C866AB0000E5588 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C7308D91C866AB0000E5588 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00BC66E51CA84CC500C214DA /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		00BC66E71CA84DE000C214DA /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		00BC66E91CA84EBC00C214DA /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		296C5816673CE8CF65F18502 /* Pods-Fudge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fudge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fudge/Pods-Fudge.debug.xcconfig"; sourceTree = "<group>"; };
 		8C7308CD1C866AB0000E5588 /* Fudge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fudge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C7308D01C866AB0000E5588 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8C7308D21C866AB0000E5588 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8C7308D51C866AB0000E5588 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8C7308D71C866AB0000E5588 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C7308DA1C866AB0000E5588 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -40,6 +44,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00BC66E41CA84CAA00C214DA /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				00BC66E51CA84CC500C214DA /* CollectionViewController.swift */,
+				00BC66E71CA84DE000C214DA /* FriendsViewController.swift */,
+				00BC66E91CA84EBC00C214DA /* LoginViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
 		8C7308C41C866AB0000E5588 = {
 			isa = PBXGroup;
 			children = (
@@ -61,8 +75,8 @@
 		8C7308CF1C866AB0000E5588 /* Fudge */ = {
 			isa = PBXGroup;
 			children = (
+				00BC66E41CA84CAA00C214DA /* View Controllers */,
 				8C7308D01C866AB0000E5588 /* AppDelegate.swift */,
-				8C7308D21C866AB0000E5588 /* ViewController.swift */,
 				8C7308D41C866AB0000E5588 /* Main.storyboard */,
 				8C7308D71C866AB0000E5588 /* Assets.xcassets */,
 				8C7308D91C866AB0000E5588 /* LaunchScreen.storyboard */,
@@ -211,7 +225,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C7308D31C866AB0000E5588 /* ViewController.swift in Sources */,
+				00BC66EA1CA84EBC00C214DA /* LoginViewController.swift in Sources */,
+				00BC66E61CA84CC500C214DA /* CollectionViewController.swift in Sources */,
+				00BC66E81CA84DE000C214DA /* FriendsViewController.swift in Sources */,
 				8C7308D11C866AB0000E5588 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
