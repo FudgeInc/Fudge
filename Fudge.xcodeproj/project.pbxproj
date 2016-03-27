@@ -15,6 +15,10 @@
 		8C7308D61C866AB0000E5588 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C7308D41C866AB0000E5588 /* Main.storyboard */; };
 		8C7308D81C866AB0000E5588 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C7308D71C866AB0000E5588 /* Assets.xcassets */; };
 		8C7308DB1C866AB0000E5588 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C7308D91C866AB0000E5588 /* LaunchScreen.storyboard */; };
+		C9C031851CA8576A003704DC /* CollectionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C031841CA8576A003704DC /* CollectionDetailViewController.swift */; };
+		C9C031871CA85780003704DC /* RecipeAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C031861CA85780003704DC /* RecipeAddViewController.swift */; };
+		C9C031891CA8578C003704DC /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C031881CA8578C003704DC /* RecipeViewController.swift */; };
+		C9C0318B1CA86092003704DC /* CollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C0318A1CA86092003704DC /* CollectionTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +33,10 @@
 		8C7308DA1C866AB0000E5588 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8C7308DC1C866AB0000E5588 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		975E4A0FB9F00EF16C526C5A /* Pods-Fudge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fudge.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fudge/Pods-Fudge.release.xcconfig"; sourceTree = "<group>"; };
+		C9C031841CA8576A003704DC /* CollectionDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionDetailViewController.swift; sourceTree = "<group>"; };
+		C9C031861CA85780003704DC /* RecipeAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeAddViewController.swift; sourceTree = "<group>"; };
+		C9C031881CA8578C003704DC /* RecipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
+		C9C0318A1CA86092003704DC /* CollectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionTableViewCell.swift; sourceTree = "<group>"; };
 		FB8E19ACD51A927170A8174C /* Pods_Fudge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fudge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -50,6 +58,9 @@
 				00BC66E51CA84CC500C214DA /* CollectionViewController.swift */,
 				00BC66E71CA84DE000C214DA /* FriendsViewController.swift */,
 				00BC66E91CA84EBC00C214DA /* LoginViewController.swift */,
+				C9C031841CA8576A003704DC /* CollectionDetailViewController.swift */,
+				C9C031861CA85780003704DC /* RecipeAddViewController.swift */,
+				C9C031881CA8578C003704DC /* RecipeViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -80,6 +91,7 @@
 				8C7308D41C866AB0000E5588 /* Main.storyboard */,
 				8C7308D71C866AB0000E5588 /* Assets.xcassets */,
 				8C7308D91C866AB0000E5588 /* LaunchScreen.storyboard */,
+				C9C0318A1CA86092003704DC /* CollectionTableViewCell.swift */,
 				8C7308DC1C866AB0000E5588 /* Info.plist */,
 			);
 			path = Fudge;
@@ -226,9 +238,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				00BC66EA1CA84EBC00C214DA /* LoginViewController.swift in Sources */,
+				C9C031851CA8576A003704DC /* CollectionDetailViewController.swift in Sources */,
+				C9C031891CA8578C003704DC /* RecipeViewController.swift in Sources */,
+				C9C031871CA85780003704DC /* RecipeAddViewController.swift in Sources */,
 				00BC66E61CA84CC500C214DA /* CollectionViewController.swift in Sources */,
 				00BC66E81CA84DE000C214DA /* FriendsViewController.swift in Sources */,
 				8C7308D11C866AB0000E5588 /* AppDelegate.swift in Sources */,
+				C9C0318B1CA86092003704DC /* CollectionTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
