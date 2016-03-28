@@ -10,24 +10,28 @@
 |`UserName`| String|
 |`ProfilePicture`| Image|
 
-###Colection
+###Collection
 
 |Atrribute|Type|
 |---------|----|
 |`Recipes`| Recipes[RecipeID]|
 |`Owner`| PFObject|
+|`Collaborators` | [PFUser] |
+|`Name` | String |
 
 ###Recipes
 
 |Atrribute|Type|
 |---------|----|
 |`RecipeID`| Int|
+|`Name` | String |
 |`Picture`| Image|
 |`Description`| String |
 |`Picture` | Image |
 |`Steps` | [String] |
 |`Creator`| PFObject |
 |`Url`    | NSUrl |
+|`Collections` | [String] |
 #Required User Stories 
 - [ ] User can login/authenticate using Parse Login
 - [ ] Users can add recipes via an in app interface
