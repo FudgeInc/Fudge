@@ -13,10 +13,11 @@ class Recipe: NSObject {
 
     var recipeId: Int?
     var picUrl: NSURL?
-    var description: String?
+    var desc: String?
     var steps: [String]? //the steps you need to take to make the recipe
     var ingredients: [String]?
     var creator: PFUser? //the user that made the recipe
+    var collections:[Int]? //the Id's of the collections the user is in
     var url: NSURL? //the url for an externally hosted recipe
     
     //initalize the model from the pfobject
@@ -31,11 +32,12 @@ class Recipe: NSObject {
             picUrl = NSURL()
         }
         
-        description = obj["Description"] as? String
+        desc = obj["Description"] as? String
         //TODO: Make sure we can cast the array like this
         steps = obj["Steps"] as? [String]
         ingredients = obj["Ingredients"] as? [String]
         creator = obj["Creator"] as? PFUser
+        collections = obj["Collections"] as? [Int]
         
         //check for the external url, if it doesn't exist make it an empty string
         let urlString = obj["Url"] as? String
@@ -47,4 +49,7 @@ class Recipe: NSObject {
     }
     
     //TODO: add method to make recips from an array, and post recipe to the server
+    class func recipesForArray(arr: [PFObject])->[Recipe]?{
+        return nil
+    }
 }
