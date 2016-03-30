@@ -49,7 +49,14 @@ class Recipe: NSObject {
     }
     
     //TODO: add method to make recips from an array, and post recipe to the server
-    class func recipesForArray(arr: [PFObject])->[Recipe]?{
-        return nil
+    
+    //creates recips from the array and returns them
+    class func recipesForArray(arr: [PFObject])->[Recipe]{
+        var newArr = [Recipe]()
+        for item in arr{
+            let newRecipe = Recipe(obj: item)
+            newArr.append(newRecipe)
+        }
+        return newArr
     }
 }

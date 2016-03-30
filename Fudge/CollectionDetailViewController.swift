@@ -10,6 +10,7 @@ import UIKit
 
 class CollectionDetailViewController: UIViewController {
     
+    var collectionId: String!
     var collection: Collection!
     override func viewDidLoad() {
         super.viewDidLoad()

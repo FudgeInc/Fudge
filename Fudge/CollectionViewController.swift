@@ -35,7 +35,7 @@ class CollectionViewController: UIViewController {
             
             let cell = sender as! CollectionTableViewCell
             let collectionDetailViewController = segue.destinationViewController as! CollectionDetailViewController
-            CollectionDetailViewController.collection = cell.collectionId
+            collectionDetailViewController.collection = cell.collection
         }
     }
     

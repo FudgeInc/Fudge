@@ -28,7 +28,7 @@ class Collection: NSObject {
     //TODO: add methods to make recipe collection from an array
     class func getRecipesForCollection(collection:Collection)->[Recipe]{
         let collectionId = collection.collectionId!
-        
+        var recipesForCollection=[Recipe]()//initialize our recipes to an empty array
         //query the backend to get the recipes for our collection
         let query = PFQuery(className: "Recipe")
         query.whereKey("collections", equalTo: collectionId)
@@ -36,11 +36,13 @@ class Collection: NSObject {
             if error == nil{
                 //if there's no error it went through correctly
                 if let results = results{
-                    return Recipe.recipesForArray(results)
+                     recipesForCollection = Recipe.recipesForArray(results)
+                     print(recipesForCollection)
                 }
             }else{
                 NSLog((error?.localizedDescription)!)
             }
         }
+        return recipesForCollection
     }
 }
