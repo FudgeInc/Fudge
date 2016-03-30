@@ -25,6 +25,17 @@ class Collection: NSObject {
         name = obj["Name"] as? String
     }
     
+    
+    //method to create collection objects from an array
+    class func getCollectionsFromArray(arr: [PFObject])->[Collection]{
+        var newArr = [Collection]()
+        for item in arr{
+            let newCollection = Collection(obj: item)
+            newArr.append(newCollection)
+        }
+        return newArr
+    }
+    
     //TODO: add methods to make recipe collection from an array
     class func getRecipesForCollection(collection:Collection)->[Recipe]{
         let collectionId = collection.collectionId!

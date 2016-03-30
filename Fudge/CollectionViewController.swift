@@ -7,17 +7,24 @@
 //
 
 import UIKit
+import Parse
 
-class CollectionViewController: UIViewController {
+class CollectionViewController: UIViewController, UITableViewDelegate,UITableViewDataSource {
     //TODO: Implement tableview
 
     @IBOutlet weak var tableView: UITableView!
     var actionSheet: UIAlertController!
+    var collections: [Collection]! //the users collections to display in the table
+    var user:PFUser! //TODO: we need to pass this in from login
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        //set the delegate and datasource for tableview
+        tableView.delegate = self
+        tableView.dataSource = self
         
         //set up the action sheet
         actionSheet = UIAlertController(title: "Add", message: "Add a Collection or Recipe", preferredStyle: .ActionSheet)
@@ -42,6 +49,42 @@ class CollectionViewController: UIViewController {
         }
         
         actionSheet.addAction(addRecipeButton)
+        
+        //Now we get the collections the user has and add them to the collections array
+        var query = PFQuery(className: "Collection")
+        //get all the arrays where the current user is a collaborator
+        query.whereKey("Collaborators", equalTo: user.username!)
+        query.findObjectsInBackgroundWithBlock { (result:[PFObject]?, error:NSError?) in
+            if let error = error{
+                //if there's an error log the error and make collections an empty array
+                NSLog(error.localizedDescription)
+            }else{
+                if let result = result{
+                    //if there's no error proceed as usual
+                    self.collections = Collection.getCollectionsFromArray(result)
+                    }
+          
+                }
+            }
+        }
+    
+    
+    /*******************/
+    /*TableView Methods*/
+    /*******************/
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
+        let cell = tableView.dequeueReusableCellWithIdentifier("CollectionCell", forIndexPath: indexPath) as! CollectionTableViewCell
+        //assign the business
+        cell.collection = self.collections[indexPath.row]
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+        if collections != nil{
+            return collections.count
+        }else{
+            return 0
+        }
     }
 
     override func didReceiveMemoryWarning() {
