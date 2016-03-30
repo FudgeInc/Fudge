@@ -9,11 +9,39 @@
 import UIKit
 
 class CollectionViewController: UIViewController {
+    //TODO: Implement tableview
 
+    @IBOutlet weak var tableView: UITableView!
+    var actionSheet: UIAlertController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        //set up the action sheet
+        actionSheet = UIAlertController(title: "Add", message: "Add a Collection or Recipe", preferredStyle: .ActionSheet)
+        
+        //now make the buttons for the two options
+        let cancelButton = UIAlertAction(title: "Cancel", style: .Cancel) { (UIAlertAction) in
+            print("Exiting Action Sheet...")
+        }
+        
+        actionSheet.addAction(cancelButton)
+        
+        let addCollectionButton = UIAlertAction(title: "Add a Collection", style: .Default) { (UIAlertAction) in
+            //perform a segue to the Add Collection View
+            self.performSegueWithIdentifier("AddCollectionSegue", sender: nil)
+        }
+        
+        actionSheet.addAction(addCollectionButton)
+        
+        let addRecipeButton = UIAlertAction(title: "Add a Recipe", style: .Default) { (UIAlertAction) in
+            //perform a segue to the Add a Recipe View
+            self.performSegueWithIdentifier("AddRecipeSegue", sender: nil)
+        }
+        
+        actionSheet.addAction(addRecipeButton)
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,6 +50,12 @@ class CollectionViewController: UIViewController {
     }
     
 
+    @IBAction func onAddButton(sender: AnyObject) {
+        //Bring up an action sheet, segue based on what they selected in the action sheet
+        self.presentViewController(actionSheet, animated: true) { 
+            print("Closed action sheet...")
+        }
+    }
     
     // MARK: - Navigation
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="CRK-g2-STg">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -149,7 +149,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gx8-Oz-cAP">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gx8-Oz-cAP">
                                 <rect key="frame" x="20" y="180" width="280" height="208"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -163,7 +163,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U86-9o-Pvz">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U86-9o-Pvz">
                                 <rect key="frame" x="20" y="420" width="280" height="78"/>
                                 <state key="normal" title="Add Collection">
                                     <color key="titleColor" red="0.92941176469999998" green="0.10980392160000001" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -184,14 +184,17 @@
                             <constraint firstItem="MpY-xO-cvC" firstAttribute="top" secondItem="11u-8d-Wal" secondAttribute="bottom" constant="8" id="GJn-Dw-Kks"/>
                             <constraint firstItem="eeq-eM-Zpf" firstAttribute="top" secondItem="MpY-xO-cvC" secondAttribute="bottom" constant="8" id="GQa-rZ-Dvf"/>
                             <constraint firstAttribute="trailing" secondItem="Gx8-Oz-cAP" secondAttribute="trailing" constant="20" id="MgN-Va-NtI"/>
+                            <constraint firstItem="U86-9o-Pvz" firstAttribute="leading" secondItem="n2D-Ms-toc" secondAttribute="leading" constant="20" id="NAZ-oi-Vy3"/>
                             <constraint firstItem="MpY-xO-cvC" firstAttribute="leading" secondItem="n2D-Ms-toc" secondAttribute="leading" constant="20" id="YrB-zu-zjW"/>
                             <constraint firstItem="Gx8-Oz-cAP" firstAttribute="top" secondItem="eeq-eM-Zpf" secondAttribute="bottom" constant="20" id="aUL-nS-fup"/>
                             <constraint firstItem="11u-8d-Wal" firstAttribute="top" secondItem="LhC-cW-JD4" secondAttribute="bottom" constant="8" id="b3d-RJ-iVd"/>
                             <constraint firstAttribute="trailing" secondItem="11u-8d-Wal" secondAttribute="trailing" constant="174" id="dWc-lx-sDr"/>
                             <constraint firstAttribute="trailing" secondItem="eeq-eM-Zpf" secondAttribute="trailing" constant="197" id="eyX-G4-TlE"/>
                             <constraint firstItem="Gx8-Oz-cAP" firstAttribute="top" secondItem="eeq-eM-Zpf" secondAttribute="bottom" constant="20" id="j79-Is-HkT"/>
+                            <constraint firstAttribute="trailing" secondItem="U86-9o-Pvz" secondAttribute="trailing" constant="20" id="l0Z-D3-XsS"/>
                             <constraint firstItem="eeq-eM-Zpf" firstAttribute="leading" secondItem="n2D-Ms-toc" secondAttribute="leading" constant="20" id="qY0-IQ-Oqi"/>
                             <constraint firstItem="U86-9o-Pvz" firstAttribute="top" secondItem="Gx8-Oz-cAP" secondAttribute="bottom" constant="32" id="sMp-8R-PgZ"/>
+                            <constraint firstItem="xBP-W3-sDv" firstAttribute="top" secondItem="U86-9o-Pvz" secondAttribute="bottom" constant="21" id="sg8-0c-re2"/>
                             <constraint firstItem="11u-8d-Wal" firstAttribute="leading" secondItem="n2D-Ms-toc" secondAttribute="leading" constant="20" id="vhN-PJ-2t6"/>
                             <constraint firstAttribute="trailing" secondItem="MpY-xO-cvC" secondAttribute="trailing" constant="20" id="x73-Oa-L2U"/>
                         </constraints>
