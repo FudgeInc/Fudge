@@ -15,6 +15,7 @@
 		8C7308D61C866AB0000E5588 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C7308D41C866AB0000E5588 /* Main.storyboard */; };
 		8C7308D81C866AB0000E5588 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C7308D71C866AB0000E5588 /* Assets.xcassets */; };
 		8C7308DB1C866AB0000E5588 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C7308D91C866AB0000E5588 /* LaunchScreen.storyboard */; };
+		C981FE811CAB788200839ED3 /* AddCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C981FE801CAB788200839ED3 /* AddCollectionViewController.swift */; };
 		C9C031851CA8576A003704DC /* CollectionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C031841CA8576A003704DC /* CollectionDetailViewController.swift */; };
 		C9C031871CA85780003704DC /* RecipeAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C031861CA85780003704DC /* RecipeAddViewController.swift */; };
 		C9C031891CA8578C003704DC /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C031881CA8578C003704DC /* RecipeViewController.swift */; };
@@ -35,6 +36,7 @@
 		8C7308DA1C866AB0000E5588 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8C7308DC1C866AB0000E5588 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		975E4A0FB9F00EF16C526C5A /* Pods-Fudge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fudge.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fudge/Pods-Fudge.release.xcconfig"; sourceTree = "<group>"; };
+		C981FE801CAB788200839ED3 /* AddCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCollectionViewController.swift; sourceTree = "<group>"; };
 		C9C031841CA8576A003704DC /* CollectionDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionDetailViewController.swift; sourceTree = "<group>"; };
 		C9C031861CA85780003704DC /* RecipeAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeAddViewController.swift; sourceTree = "<group>"; };
 		C9C031881CA8578C003704DC /* RecipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				C9C031841CA8576A003704DC /* CollectionDetailViewController.swift */,
 				C9C031861CA85780003704DC /* RecipeAddViewController.swift */,
 				C9C031881CA8578C003704DC /* RecipeViewController.swift */,
+				C981FE801CAB788200839ED3 /* AddCollectionViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C981FE811CAB788200839ED3 /* AddCollectionViewController.swift in Sources */,
 				00BC66EA1CA84EBC00C214DA /* LoginViewController.swift in Sources */,
 				C9C031901CA86731003704DC /* Collection.swift in Sources */,
 				C9C031851CA8576A003704DC /* CollectionDetailViewController.swift in Sources */,
