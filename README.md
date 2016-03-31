@@ -10,10 +10,10 @@ Here's a walkthrough of implemented user stories:
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Required User Stories 
-- [ ] User can login/authenticate using Parse Login
+- [x] User can login/authenticate using Parse Login
 - [ ] Users can add recipes via an in app interface
 - [ ] Recipes are stored on a Parse instance
-- [ ] User can make a collaborative recipe collection using the user interaface
+- [x] User can make a collaborative recipe collection using the user interaface
 - [ ] User can authenitcate/add a user(s) to edit collaborate on a recipe book
 
 ## Nice to Have
