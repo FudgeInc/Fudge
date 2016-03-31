@@ -7,9 +7,14 @@
 //
 
 import UIKit
+import Parse
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,6 +26,38 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func onSignIn(sender: AnyObject) {
+        PFUser.logInWithUsernameInBackground(usernameTextField.text!, password: passwordTextField.text!) { (user: PFUser?, error: NSError?) -> Void in
+            if user != nil {
+                self.performSegueWithIdentifier("loginSegue", sender: nil)
+            } else {
+                print(error?.localizedDescription)
+            }
+        }
+    }
+    
+    @IBAction func onSignUp(sender: AnyObject) {
+        let newUser = PFUser()
+        
+        newUser.username = usernameTextField.text
+        newUser.password = passwordTextField.text
+        
+        newUser.signUpInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            if success {
+                self.performSegueWithIdentifier("loginSegue", sender: nil)
+            } else {
+                print(error?.localizedDescription)
+                if error?.code == 202 {
+                    print("Username is taken")
+                }
+            }
+        }
+    }
+    
+    @IBAction func onTapBackground(sender: AnyObject) {
+        usernameTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+    }
 
     /*
     // MARK: - Navigation

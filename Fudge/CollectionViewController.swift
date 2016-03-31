@@ -53,7 +53,7 @@ class CollectionViewController: UIViewController, UITableViewDelegate,UITableVie
         //Now we get the collections the user has and add them to the collections array
         var query = PFQuery(className: "Collection")
         //get all the arrays where the current user is a collaborator
-        query.whereKey("Collaborators", equalTo: user.username!)
+        /*query.whereKey("Collaborators", equalTo: user.username!)*/
         query.findObjectsInBackgroundWithBlock { (result:[PFObject]?, error:NSError?) in
             if let error = error{
                 //if there's an error log the error and make collections an empty array
@@ -100,6 +100,11 @@ class CollectionViewController: UIViewController, UITableViewDelegate,UITableVie
         }
     }
     
+    @IBAction func onLogout(sender: AnyObject) {
+        PFUser.logOut()
+        NSNotificationCenter.defaultCenter().postNotificationName("UserDidLogout", object: nil)
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -116,5 +121,4 @@ class CollectionViewController: UIViewController, UITableViewDelegate,UITableVie
         }
     }
     
-
 }
