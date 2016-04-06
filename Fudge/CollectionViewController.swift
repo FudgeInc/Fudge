@@ -53,7 +53,7 @@ class CollectionViewController: UIViewController, UITableViewDelegate,UITableVie
         //Now we get the collections the user has and add them to the collections array
         var query = PFQuery(className: "Collection")
         //get all the arrays where the current user is a collaborator
-        /*query.whereKey("Collaborators", equalTo: user.username!)*/
+        query.whereKey("Collaborators", equalTo: (PFUser.currentUser()?.username!)! as String)
         query.findObjectsInBackgroundWithBlock { (result:[PFObject]?, error:NSError?) in
             if let error = error{
                 //if there's an error log the error and make collections an empty array

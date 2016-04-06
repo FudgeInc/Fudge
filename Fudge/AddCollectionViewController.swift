@@ -12,8 +12,8 @@ import Parse
 class AddCollectionViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var collectionNameTextField: UITextField!
     
+    @IBOutlet weak var collectionNameTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,15 +33,17 @@ class AddCollectionViewController: UIViewController {
         //add a blank recipe array 
         collection["recipes"] = []
         
-        //FIXME: add owner to collaborators and as defulat user
-        collection["owner"] = nil
-        collection["collaborators"] = []
+        let userString = (PFUser.currentUser()?.username)! as String
+        collection["owner"] = userString
+        collection["collaborators"] = [userString]
         
         collection["name"] = collectionNameTextField.text! as String
         
         collection.saveInBackgroundWithBlock { (success: Bool, error:NSError?) in
             if(success){
                 NSLog("succesfully pushed collection!")
+                //do the back segue
+                self.navigationController?.popViewControllerAnimated(true)
             }else{
                 NSLog((error?.localizedDescription)!)
             }
