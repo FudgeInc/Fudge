@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import Parse
 
 class AddCollectionViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionNameTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +26,28 @@ class AddCollectionViewController: UIViewController {
     }
     
 
+    @IBAction func onAddCollectionPress(sender: AnyObject) {
+        //create a new collection object
+        var collection = PFObject(className: "Collection")
+        
+        //add a blank recipe array 
+        collection["recipes"] = []
+        
+        //FIXME: add owner to collaborators and as defulat user
+        collection["owner"] = nil
+        collection["collaborators"] = []
+        
+        collection["name"] = collectionNameTextField.text! as String
+        
+        collection.saveInBackgroundWithBlock { (success: Bool, error:NSError?) in
+            if(success){
+                NSLog("succesfully pushed collection!")
+            }else{
+                NSLog((error?.localizedDescription)!)
+            }
+        }
+
+    }
     /*
     // MARK: - Navigation
 
