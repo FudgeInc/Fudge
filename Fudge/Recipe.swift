@@ -48,9 +48,23 @@ class Recipe: NSObject {
         }
     }
     
+    class func postRecipe(withSteps steps: String!, withIngredients ingredients: String!, withDescription title: String!, withCompletion completion: PFBooleanResultBlock){
+        let recipe = PFObject(className: "recipe")
+        
+        recipe["steps"] = steps
+        recipe["Ingredients"] = ingredients
+        recipe["Description"] = title
+        recipe["Creator"] = PFUser.currentUser()
+        
+        //Figure out how to generate a recipe ID maybe a global total of recipes submitted
+        
+        recipe.saveInBackgroundWithBlock(completion)
+
+    }
+    
     //TODO: add method to make recips from an array, and post recipe to the server
     
-    //creates recips from the array and returns them
+    //creates recipes from the array and returns them
     class func recipesForArray(arr: [PFObject])->[Recipe]{
         var newArr = [Recipe]()
         for item in arr{
