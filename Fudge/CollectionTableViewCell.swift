@@ -10,8 +10,8 @@ import UIKit
 
 class CollectionTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var collectionNameLabel: UILabel!
     @IBOutlet weak var numRecipesLabel: UILabel!
+    @IBOutlet weak var collectionNameLabel: UILabel!
     var collectionId: String!
     var collection : Collection!
     

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -119,6 +119,50 @@
                     <view key="view" contentMode="scaleToFill" id="VoO-3y-nrm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="72" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KvU-cX-Qs2">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CollectionCell" rowHeight="72" id="c9z-9m-Pju" customClass="CollectionTableViewCell" customModule="Fudge" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="320" height="72"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="c9z-9m-Pju" id="rgK-Mz-l6d">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="71.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" misplaced="YES" text="Recipe Name" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bwe-aW-2wu">
+                                                    <rect key="frame" x="8" y="8" width="138" height="39"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" misplaced="YES" text="Recipe Name" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wwf-lD-Fqg">
+                                                    <rect key="frame" x="192" y="8" width="120" height="39"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Bwe-aW-2wu" firstAttribute="top" secondItem="rgK-Mz-l6d" secondAttribute="top" constant="8" id="05D-Q8-U1y"/>
+                                                <constraint firstItem="Bwe-aW-2wu" firstAttribute="leading" secondItem="rgK-Mz-l6d" secondAttribute="leading" constant="8" id="9aA-Qu-hNR"/>
+                                                <constraint firstAttribute="bottom" secondItem="Bwe-aW-2wu" secondAttribute="bottom" constant="24.5" id="E26-bK-D7s"/>
+                                                <constraint firstAttribute="bottom" secondItem="wwf-lD-Fqg" secondAttribute="bottom" constant="24.5" id="UaW-ZW-NNQ"/>
+                                                <constraint firstItem="wwf-lD-Fqg" firstAttribute="leading" secondItem="Bwe-aW-2wu" secondAttribute="trailing" constant="46" id="dvr-eK-bsS"/>
+                                                <constraint firstItem="wwf-lD-Fqg" firstAttribute="top" secondItem="rgK-Mz-l6d" secondAttribute="top" constant="8" id="gfL-C5-a1s"/>
+                                                <constraint firstAttribute="trailing" secondItem="wwf-lD-Fqg" secondAttribute="trailing" constant="8" id="h1s-uf-Xpg"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="collectionNameLabel" destination="Bwe-aW-2wu" id="yG3-3R-V0K"/>
+                                            <outlet property="numRecipesLabel" destination="wwf-lD-Fqg" id="E8I-6a-ZkW"/>
+                                            <segue destination="y1f-XQ-uOW" kind="show" identifier="CollectionToDetailSegue" id="WyD-FM-Lh5"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Collections" id="IUq-w3-Kw9">
@@ -143,6 +187,7 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="tableView" destination="KvU-cX-Qs2" id="CVB-os-hQc"/>
                         <segue destination="dY8-EZ-bzU" kind="show" identifier="AddCollectionSegue" id="Uta-sY-kgr"/>
                         <segue destination="iWo-Qk-cMT" kind="show" identifier="AddRecipeSegue" id="vAm-QQ-foz"/>
                     </connections>
@@ -336,7 +381,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="116" id="TUC-WB-sIR">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="116"/>
+                                        <rect key="frame" x="0.0" y="92" width="320" height="116"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TUC-WB-sIR" id="HYw-AJ-vwQ">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="115.5"/>

@@ -49,7 +49,7 @@ class CollectionViewController: UIViewController, UITableViewDelegate,UITableVie
         }
         
         actionSheet.addAction(addRecipeButton)
-        
+        self.collections = []
         //Now we get the collections the user has and add them to the collections array
         var query = PFQuery(className: "Collection")
         //get all the arrays where the current user is a collaborator
