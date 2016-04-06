@@ -320,14 +320,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hHS-ql-H0k">
-                                <rect key="frame" x="131" y="481" width="49" height="30"/>
-                                <color key="tintColor" red="0.76862745099999996" green="0.070588235289999995" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Submit"/>
-                                <connections>
-                                    <action selector="onSubmitTapped:" destination="iWo-Qk-cMT" eventType="touchUpInside" id="K08-fM-q5J"/>
-                                </connections>
-                            </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="abl-Zs-MBn">
                                 <rect key="frame" x="20" y="231" width="280" height="86"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -349,19 +341,26 @@
                                     <color key="titleColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="onCollectionChoiceTapped:" destination="iWo-Qk-cMT" eventType="touchUpInside" id="b7c-EW-OfC"/>
+                                    <action selector="onCollectionPressed:" destination="iWo-Qk-cMT" eventType="touchUpInside" id="WW7-Nw-bw3"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="plus" translatesAutoresizingMaskIntoConstraints="NO" id="vlM-8W-3VY">
                                 <rect key="frame" x="151" y="332" width="18" height="18"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hHS-ql-H0k">
+                                <rect key="frame" x="131" y="481" width="49" height="30"/>
+                                <color key="tintColor" red="0.76862745099999996" green="0.070588235289999995" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="onsubmitPressed:" destination="iWo-Qk-cMT" eventType="touchUpInside" id="Pgt-X2-pH1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="ingredientsTextView" destination="abl-Zs-MBn" id="9x8-ZN-lBF"/>
-                        <outlet property="onSubmitTapped" destination="hHS-ql-H0k" id="88b-b0-7L1"/>
                         <outlet property="stepsTextView" destination="mtn-YY-Yh9" id="zhN-mW-154"/>
                         <outlet property="titleField" destination="8ei-B6-O0Q" id="dgN-Ca-Oa2"/>
                     </connections>
