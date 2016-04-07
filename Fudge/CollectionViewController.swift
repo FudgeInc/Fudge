@@ -51,9 +51,11 @@ class CollectionViewController: UIViewController, UITableViewDelegate,UITableVie
         actionSheet.addAction(addRecipeButton)
         self.collections = []
         //Now we get the collections the user has and add them to the collections array
-        var query = PFQuery(className: "Collection")
+        // Or using NSPredicate
+        let userString = (PFUser.currentUser()?.username!)! as String
+        let predicate = NSPredicate(format: "%@ IN collaborators", userString)
+        let query = PFQuery(className: "Collection", predicate: predicate)
         //get all the arrays where the current user is a collaborator
-        query.whereKey("Collaborators", equalTo: (PFUser.currentUser()?.username!)! as String)
         query.findObjectsInBackgroundWithBlock { (result:[PFObject]?, error:NSError?) in
             if let error = error{
                 //if there's an error log the error and make collections an empty array
@@ -62,6 +64,7 @@ class CollectionViewController: UIViewController, UITableViewDelegate,UITableVie
                 if let result = result{
                     //if there's no error proceed as usual
                     self.collections = Collection.getCollectionsFromArray(result)
+                    self.tableView.reloadData()
                     }
           
                 }

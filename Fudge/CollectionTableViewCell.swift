@@ -13,14 +13,18 @@ class CollectionTableViewCell: UITableViewCell {
     @IBOutlet weak var numRecipesLabel: UILabel!
     @IBOutlet weak var collectionNameLabel: UILabel!
     var collectionId: String!
-    var collection : Collection!
+    var collection : Collection!{
+        didSet{
+            // Initialization code
+            collectionNameLabel.text=collection.name
+            numRecipesLabel.text = String(collection.recipes!.count) + " Recipes"
+            self.collectionId = collection.collectionId
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        collectionNameLabel.text=collection.name
-        numRecipesLabel.text = String(collection.recipes!.count) + " Recipes"
-        self.collectionId = collection.collectionId
+
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

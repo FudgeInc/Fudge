@@ -11,18 +11,18 @@ import Parse
 
 class Collection: NSObject {
     var recipes: [Int]?
-    var owner: PFUser?
-    var collaborators: [PFUser]?
+    var owner: String?
+    var collaborators: [String]?
     var collectionId: String?
     var name:String?
     
     init(obj: PFObject) {
         //TODO: see if we can cast it like this
         collectionId = obj.objectId
-        recipes = obj["Recipes"] as? [Int]
-        owner = obj["Owner"] as? PFUser
-        collaborators = obj["Collaborators"] as? [PFUser]
-        name = obj["Name"] as? String
+        recipes = obj["recipes"] as? [Int]
+        owner = obj["owner"] as? String
+        collaborators = obj["collaborators"] as? [String]
+        name = obj["name"] as? String
     }
     
     
