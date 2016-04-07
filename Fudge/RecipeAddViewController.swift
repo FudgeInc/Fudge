@@ -20,7 +20,6 @@ class RecipeAddViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 
@@ -29,14 +28,10 @@ class RecipeAddViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    //this will be to add the recipe to a collection
-    @IBAction func onCollectionChoiceTapped(sender: AnyObject) {
+    @IBAction func onCollectionPressed(sender: AnyObject) {
     }
     
-    //check to see if all fields are null, then post data to parse
-    @IBAction func onSubmitTapped(sender: AnyObject) {
-        
-        //TODO: Move this to another class
+    @IBAction func onsubmitPressed(sender: AnyObject) {
         if(titleField.text! != "" && ingredientsTextView.text! != "" && stepsTextView.text! != "" ){
             
             let title = titleField.text
@@ -53,11 +48,16 @@ class RecipeAddViewController: UIViewController {
                     //TODO: display error message perform segue
                 }
             })
-                       
-        }
             
-        
+        }
+
     }
+    //this will be to add the recipe to a collection
+
+    
+    //check to see if all fields are null, then post data to parse
+
+ 
     /*
     // MARK: - Navigation
 
