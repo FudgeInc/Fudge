@@ -85,11 +85,13 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Fudge/Bolts.framework"
+  install_framework "Pods-Fudge/MBProgressHUD.framework"
   install_framework "Pods-Fudge/Parse.framework"
   install_framework "Pods-Fudge/ParseUI.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Fudge/Bolts.framework"
+  install_framework "Pods-Fudge/MBProgressHUD.framework"
   install_framework "Pods-Fudge/Parse.framework"
   install_framework "Pods-Fudge/ParseUI.framework"
 fi
