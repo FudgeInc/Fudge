@@ -88,7 +88,7 @@
             </objects>
             <point key="canvasLocation" x="-41" y="232"/>
         </scene>
-        <!--Friends-->
+        <!--Friends List-->
         <scene sceneID="dRa-GJ-hG5">
             <objects>
                 <viewController id="B6K-bn-Hzu" customClass="FriendsViewController" customModule="Fudge" customModuleProvider="target" sceneMemberID="viewController">
@@ -101,12 +101,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Friends" image="friends" id="fnb-cp-K3s"/>
+                    <navigationItem key="navigationItem" title="Friends List" id="uOZ-o0-WRq">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="1qA-Np-kPL">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="f7A-DH-VIK">
+                                <rect key="frame" x="263" y="7" width="41" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add...">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <connections>
+                                <action selector="onAddFriends:" destination="B6K-bn-Hzu" id="bUE-mE-5Vm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AMB-Sv-ZbJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="856" y="589"/>
+            <point key="canvasLocation" x="1236" y="589"/>
         </scene>
         <!--Collections-->
         <scene sceneID="AkY-fR-bDA">
@@ -128,7 +141,7 @@
                                         <rect key="frame" x="0.0" y="92" width="320" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="c9z-9m-Pju" id="rgK-Mz-l6d">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="71.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="71"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" misplaced="YES" text="Recipe Name" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bwe-aW-2wu">
@@ -227,7 +240,7 @@
                                         <rect key="frame" x="0.0" y="28" width="280" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tbW-EI-Zye" id="vpY-Pn-lPC">
-                                            <rect key="frame" x="0.0" y="0.0" width="280" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="280" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -389,7 +402,7 @@
                                         <rect key="frame" x="0.0" y="92" width="320" height="116"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TUC-WB-sIR" id="HYw-AJ-vwQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="115.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="115"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
@@ -405,7 +418,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kdf-Vs-wqP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1718" y="270"/>
+            <point key="canvasLocation" x="2250" y="270"/>
         </scene>
         <!--Recipe View Controller-->
         <scene sceneID="SFf-Q4-2f5">
@@ -424,7 +437,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C1g-2N-0nN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2125" y="525"/>
+            <point key="canvasLocation" x="2657" y="525"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="FJV-nK-dmQ">
@@ -438,7 +451,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="hZW-64-2ho" kind="relationship" relationship="viewControllers" id="HXd-8x-fsE"/>
-                        <segue destination="B6K-bn-Hzu" kind="relationship" relationship="viewControllers" id="exd-B4-z8Z"/>
+                        <segue destination="SGc-Iv-Can" kind="relationship" relationship="viewControllers" id="exd-B4-z8Z"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XMW-qO-vXi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -468,6 +481,26 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wgJ-qj-KAX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="856" y="-106"/>
+        </scene>
+        <!--Friends-->
+        <scene sceneID="qhM-f2-jmt">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SGc-Iv-Can" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Friends" image="friends" id="fnb-cp-K3s"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vfo-3S-ngx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.90588235294117647" green="0.070588235294117646" blue="0.15686274509803921" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="B6K-bn-Hzu" kind="relationship" relationship="rootViewController" id="Emx-Lq-3k1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v2W-Ar-eRD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="856" y="589"/>
         </scene>
     </scenes>
     <resources>
