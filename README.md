@@ -11,7 +11,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Required User Stories 
 - [x] User can login/authenticate using Parse Login
-- [ ] Users can add recipes via an in app interface
+- [x] Users can add recipes via an in app interface
 - [ ] Recipes are stored on a Parse instance
 - [x] User can make a collaborative recipe collection using the user interaface
 - [ ] User can authenitcate/add a user(s) to edit collaborate on a recipe book
