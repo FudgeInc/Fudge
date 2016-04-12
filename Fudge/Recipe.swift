@@ -12,6 +12,7 @@ import Parse
 class Recipe: NSObject {
 
     var recipeId: Int?
+    var name: String?
     var picUrl: NSURL?
     var desc: String?
     var steps: [String]? //the steps you need to take to make the recipe
@@ -31,6 +32,7 @@ class Recipe: NSObject {
             //otherwise make a blank url
             picUrl = NSURL()
         }
+        name = obj["Name"] as? String
         
         desc = obj["Description"] as? String
         //TODO: Make sure we can cast the array like this
@@ -48,9 +50,10 @@ class Recipe: NSObject {
         }
     }
     
-    class func postRecipe(withSteps steps: String!, withIngredients ingredients: String!, withDescription title: String!, withCompletion completion: PFBooleanResultBlock){
+    class func postRecipe(withSteps steps: String!, withIngredients ingredients: String!, withDescription title: String!,name: String!, withCompletion completion: PFBooleanResultBlock){
         let recipe = PFObject(className: "recipe")
         
+        recipe["name"] = name
         recipe["steps"] = steps
         recipe["Ingredients"] = ingredients
         recipe["Description"] = title
@@ -62,7 +65,6 @@ class Recipe: NSObject {
 
     }
     
-    //TODO: add method to make recips from an array, and post recipe to the server
     
     //creates recipes from the array and returns them
     class func recipesForArray(arr: [PFObject])->[Recipe]{

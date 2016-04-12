@@ -47,8 +47,8 @@ class RecipeAddViewController: UIViewController {
             let loadingNotification = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
             loadingNotification.mode = MBProgressHUDMode.Indeterminate
             loadingNotification.labelText = "Uploading to Fudge"
-            
-            Recipe.postRecipe(withSteps: steps, withIngredients: ingredients, withDescription: title, withCompletion: { (completed: Bool, error: NSError?) in
+            //TODO: fix this so we have a description field
+            Recipe.postRecipe(withSteps: steps, withIngredients: ingredients, withDescription: title,name:title, withCompletion: { (completed: Bool, error: NSError?) in
                 if(completed){
                     MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
                     print("success")
