@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import MBProgressHUD
 class RecipeAddViewController: UIViewController {
 
     @IBOutlet weak var titleField: UITextField!
@@ -21,6 +22,11 @@ class RecipeAddViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.ingredientsTextView.layer.borderWidth = 1
+        self.ingredientsTextView.layer.borderColor = UIColor.blackColor().CGColor
+        self.stepsTextView.layer.borderWidth = 1
+        self.stepsTextView.layer.borderColor = UIColor.blackColor().CGColor
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,10 +44,21 @@ class RecipeAddViewController: UIViewController {
             let ingredients = ingredientsTextView.text
             let steps = stepsTextView.text
             
+            let loadingNotification = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+            loadingNotification.mode = MBProgressHUDMode.Indeterminate
+            loadingNotification.labelText = "Uploading to Fudge"
+            
             Recipe.postRecipe(withSteps: steps, withIngredients: ingredients, withDescription: title, withCompletion: { (completed: Bool, error: NSError?) in
                 if(completed){
+                    MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
                     print("success")
                     //TODO: perform segue back to collection view
+                    
+                    self.titleField.text = ""
+                    self.ingredientsTextView.text = ""
+                    self.stepsTextView.text = ""
+                    self.performSegueWithIdentifier("AddRecipeSegue", sender: nil)
+
                 }
                 else{
                     print(error?.localizedDescription)
