@@ -10,7 +10,7 @@ import UIKit
 import Parse
 
 class Collection: NSObject {
-    var recipes: [Recipe]?
+    var recipes: [String]? //use the object id's of the recipes      
     var owner: String?
     var collaborators: [String]?
     var collectionId: String?
@@ -24,8 +24,9 @@ class Collection: NSObject {
         owner = obj["owner"] as? String
         collaborators = obj["collaborators"] as? [String]
         name = obj["name"] as? String
-        recipes = [] //we will get the recipes when we query the database
+        recipes = obj["recipes"] as? [String]
     }
+    
     
     
     //method to create collection objects from an array
