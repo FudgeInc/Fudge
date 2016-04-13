@@ -17,7 +17,9 @@ class RecipeAddViewController: UIViewController {
     
     @IBOutlet weak var stepsTextView: UITextView!
     
-    var collectionName: String?
+    @IBOutlet weak var chooseCollectionButton: UIButton!
+    
+    var collection:Collection?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +29,20 @@ class RecipeAddViewController: UIViewController {
         self.stepsTextView.layer.borderWidth = 1
         self.stepsTextView.layer.borderColor = UIColor.blackColor().CGColor
         
+        //if there's a collection from the select collection set it as the button label
+        if let collection = collection {
+            chooseCollectionButton.setTitle(collection.name, forState: UIControlState.Normal)
+        }
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        //if there's a collection from the select collection set it as the button label
+        collection = Collection.selectedCollection
+        if let collection = collection {
+            print("changing butotn text")
+            chooseCollectionButton.setTitle(collection.name, forState: UIControlState.Normal)
+        }
     }
 
     override func didReceiveMemoryWarning() {

@@ -379,6 +379,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="chooseCollectionButton" destination="VmC-Cx-Xfd" id="47Y-U0-FjJ"/>
                         <outlet property="ingredientsTextView" destination="abl-Zs-MBn" id="9x8-ZN-lBF"/>
                         <outlet property="stepsTextView" destination="mtn-YY-Yh9" id="zhN-mW-154"/>
                         <outlet property="titleField" destination="8ei-B6-O0Q" id="dgN-Ca-Oa2"/>
@@ -386,7 +387,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hMw-UM-dh9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2068" y="-133"/>
+            <point key="canvasLocation" x="2072" y="-133"/>
         </scene>
         <!--Collection Selection View Controller-->
         <scene sceneID="Bey-dZ-HWR">
@@ -400,8 +401,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hw6-og-ffV">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hw6-og-ffV">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="482"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CollectionSelectionCell" rowHeight="72" id="hev-Rf-6Pf" customClass="CollectionTableViewCell" customModule="Fudge" customModuleProvider="target">
@@ -441,12 +442,22 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CEd-FU-iuC">
+                                <rect key="frame" x="0.0" y="483" width="320" height="85"/>
+                                <state key="normal" title="Select Collection"/>
+                                <connections>
+                                    <action selector="onSelectCollectionPress:" destination="vjq-mB-pdN" eventType="touchUpInside" id="XsV-v3-vVL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="np5-eJ-lpJ" firstAttribute="top" secondItem="CEd-FU-iuC" secondAttribute="bottom" id="2ko-gb-Nd2"/>
                             <constraint firstItem="hw6-og-ffV" firstAttribute="leading" secondItem="QY2-FN-Nj4" secondAttribute="leading" id="2vH-ta-1KP"/>
                             <constraint firstItem="hw6-og-ffV" firstAttribute="top" secondItem="QY2-FN-Nj4" secondAttribute="top" id="SqF-50-Vnv"/>
-                            <constraint firstItem="np5-eJ-lpJ" firstAttribute="top" secondItem="hw6-og-ffV" secondAttribute="bottom" id="fcY-X8-smX"/>
+                            <constraint firstItem="CEd-FU-iuC" firstAttribute="leading" secondItem="QY2-FN-Nj4" secondAttribute="leading" id="ab2-uf-CiH"/>
+                            <constraint firstItem="CEd-FU-iuC" firstAttribute="top" secondItem="hw6-og-ffV" secondAttribute="bottom" constant="1" id="eHm-Qo-1QH"/>
+                            <constraint firstAttribute="trailing" secondItem="CEd-FU-iuC" secondAttribute="trailing" id="mPl-Jp-Tnf"/>
                             <constraint firstAttribute="trailing" secondItem="hw6-og-ffV" secondAttribute="trailing" id="xOX-Ob-bGA"/>
                         </constraints>
                     </view>
@@ -610,4 +621,5 @@
         <image name="friends" width="24" height="24"/>
         <image name="plus" width="24" height="24"/>
     </resources>
+    <color key="tintColor" red="0.92941176469999998" green="0.10980392160000001" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
 </document>

@@ -8,7 +8,6 @@
 
 import UIKit
 import Parse
-import MBProgressHUD
 
 class CollectionSelectionViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
 
@@ -52,7 +51,16 @@ class CollectionSelectionViewController: UIViewController,UITableViewDelegate, U
         }
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
+        let index = indexPath.row
+        Collection.selectedCollection = collections[index]
+    }
     
+    @IBAction func onSelectCollectionPress(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true) {
+            NSLog("dismiss collection selection")
+        }
+    }
 
     /*
     // MARK: - Navigation

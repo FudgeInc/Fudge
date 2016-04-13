@@ -16,6 +16,7 @@ class Collection: NSObject {
     var collectionId: String?
     var name:String?
     static var collections: [Collection]?
+    static var selectedCollection: Collection?
     
     init(obj: PFObject) {
         //TODO: see if we can cast it like this
@@ -40,6 +41,10 @@ class Collection: NSObject {
     //return our collection object persisted 
     class func getCollectionsforUser()-> [Collection]?{
         return collections
+    }
+    
+    class func getSelectedCollection() -> Collection?{
+        return selectedCollection
     }
     
     //TODO: add methods to make recipe collection from an array
