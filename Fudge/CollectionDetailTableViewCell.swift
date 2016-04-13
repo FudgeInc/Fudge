@@ -15,7 +15,8 @@ class CollectionDetailTableViewCell: UITableViewCell {
     
     var recipe: Recipe!{
         didSet{
-            createdByLabel.text = recipe.creator?.username
+            //TODO: fix this so it displays the name properly
+            createdByLabel.text = ""
             recipeNameLabel.text = recipe.name
         }
     }

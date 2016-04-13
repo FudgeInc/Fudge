@@ -87,7 +87,7 @@ class RecipeAddViewController: UIViewController {
                                 //append the object id of the recipe to the array, then add i
                                 var arr = result!["recipes"] as! [String]
                                 arr.append(recipe.objectId!)
-                                
+                                //TODO: there's a better way to do this
                                 
                                 //save the updated collection
                                 

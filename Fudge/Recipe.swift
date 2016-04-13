@@ -32,7 +32,7 @@ class Recipe: NSObject {
             //otherwise make a blank url
             picUrl = NSURL()
         }
-        name = obj["Name"] as? String
+        name = obj["name"] as? String
         
         desc = obj["Description"] as? String
         //TODO: Make sure we can cast the array like this
