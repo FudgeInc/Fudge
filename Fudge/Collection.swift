@@ -10,19 +10,20 @@ import UIKit
 import Parse
 
 class Collection: NSObject {
-    var recipes: [Int]?
+    var recipes: [Recipe]?
     var owner: String?
     var collaborators: [String]?
     var collectionId: String?
     var name:String?
+    static var collections: [Collection]?
     
     init(obj: PFObject) {
         //TODO: see if we can cast it like this
         collectionId = obj.objectId
-        recipes = obj["recipes"] as? [Int]
         owner = obj["owner"] as? String
         collaborators = obj["collaborators"] as? [String]
         name = obj["name"] as? String
+        recipes = [] //we will get the recipes when we query the database
     }
     
     
@@ -34,6 +35,11 @@ class Collection: NSObject {
             newArr.append(newCollection)
         }
         return newArr
+    }
+    
+    //return our collection object persisted 
+    class func getCollectionsforUser()-> [Collection]?{
+        return collections
     }
     
     //TODO: add methods to make recipe collection from an array

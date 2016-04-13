@@ -25,6 +25,8 @@ class CollectionViewController: UIViewController, UITableViewDelegate,UITableVie
         //set the delegate and datasource for tableview
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.rowHeight = UITableViewAutomaticDimension //set thiis so autolayout will decide the height
+        tableView.estimatedRowHeight = 200
         
         //set up the action sheet
         actionSheet = UIAlertController(title: "Add", message: "Add a Collection or Recipe", preferredStyle: .ActionSheet)
@@ -49,7 +51,6 @@ class CollectionViewController: UIViewController, UITableViewDelegate,UITableVie
         }
         
         actionSheet.addAction(addRecipeButton)
-        self.collections = []
         //Now we get the collections the user has and add them to the collections array
         // Or using NSPredicate
         let userString = (PFUser.currentUser()?.username!)! as String
@@ -64,6 +65,8 @@ class CollectionViewController: UIViewController, UITableViewDelegate,UITableVie
                 if let result = result{
                     //if there's no error proceed as usual
                     self.collections = Collection.getCollectionsFromArray(result)
+                    //set the collection class variable
+                    Collection.collections = self.collections
                     self.tableView.reloadData()
                     }
           

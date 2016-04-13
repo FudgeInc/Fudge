@@ -22,6 +22,9 @@ class CollectionDetailTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        createdByLabel.preferredMaxLayoutWidth = createdByLabel.frame.size.width
+        recipeNameLabel.preferredMaxLayoutWidth = recipeNameLabel.frame.size.width
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

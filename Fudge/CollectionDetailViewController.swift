@@ -16,6 +16,8 @@ class CollectionDetailViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        //TODO: query the server to get the recipes using the objectID for the collection
     }
 
     override func didReceiveMemoryWarning() {
