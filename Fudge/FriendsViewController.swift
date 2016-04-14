@@ -7,70 +7,68 @@
 //
 
 import UIKit
-import Contacts
 
-class FriendsViewController: UIViewController {
-
+class FriendsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    var friends: [NSDictionary]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 120
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func onAddFriends(sender: AnyObject) {
-        let store = CNContactStore()
-        
-        let status = CNContactStore.authorizationStatusForEntityType(.Contacts)
-        if status == .Denied || status == .Restricted {
-            // user previously denied, so tell them to fix that in settings
-            return
-        }
-        
-        // open it
-        store.requestAccessForEntityType(.Contacts) { granted, error in
-            guard granted else {
-                dispatch_async(dispatch_get_main_queue()) {
-                    // user didn't grant authorization, so tell them to fix that in settings
-                    print(error)
-                }
-                return
-            }
-            
-            // get the contacts
-            
-            var contacts = [CNContact]()
-            let request = CNContactFetchRequest(keysToFetch: [CNContactIdentifierKey, CNContactFormatter.descriptorForRequiredKeysForStyle(.FullName)])
-            do {
-                try store.enumerateContactsWithFetchRequest(request) { contact, stop in
-                    contacts.append(contact)
-                }
-            } catch {
-                print(error)
-            }
-            
-            // do something with the contacts array (e.g. print the names)
-            
-            let formatter = CNContactFormatter()
-            formatter.style = .FullName
-            for contact in contacts {
-                print(formatter.stringFromContact(contact))
-            }
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if let friends = friends {
+            return friends.count
+        } else {
+            return 0
         }
     }
-
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("FriendCell", forIndexPath: indexPath) as! FriendCell
+        
+        let friend = friends![indexPath.row]
+        /*
+         let title = movie["title"] as! String
+         let overview = movie["overview"] as! String
+         cell.titleLabel.text = title
+         cell.overviewLabel.text = overview
+         
+         let baseUrl = "http://image.tmdb.org/t/p/w500"
+         if let posterPath = movie["poster_path"] as? String {
+         let imageUrl = NSURL(string: baseUrl + posterPath)
+         cell.posterView.setImageWithURL(imageUrl!)
+         }
+         
+         let backgroundView = UIView()
+         backgroundView.backgroundColor = UIColor.grayColor()
+         cell.selectedBackgroundView = backgroundView
+         */
+        return cell
+    }
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
