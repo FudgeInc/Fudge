@@ -13,12 +13,19 @@ class RecipeViewController: UIViewController {
     @IBOutlet weak var recipeNameLabel: UILabel!
     @IBOutlet weak var createdByLabel: UILabel!
     
+    //both text views are not editable
     @IBOutlet weak var ingredientsTextView: UITextView!
     
     @IBOutlet weak var stepsTextView: UITextView!
+  
+    var recipe:Recipe!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        print(recipe.steps)
+    
+        
         // Do any additional setup after loading the view.
     }
 

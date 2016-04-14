@@ -69,15 +69,28 @@ class CollectionDetailViewController: UIViewController, UITableViewDelegate, UIT
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    /***********************
+    * Segue to view Recipe *
+    ***********************/
+   
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if (segue.identifier == "recipeDetailSegue"){
+            
+            let cell = sender as! UITableViewCell
+            if let indexPath = tableView.indexPathForCell(cell) {
+                let recipeDetailController = segue.destinationViewController as! RecipeViewController
+                
+                let recipe = recipes![indexPath.row]
+                
+                recipeDetailController.recipe = recipe
+                
+                tableView.deselectRowAtIndexPath(indexPath, animated: true)
+
+                
+            }
+        }
+       
     }
-    */
+    
 
 }

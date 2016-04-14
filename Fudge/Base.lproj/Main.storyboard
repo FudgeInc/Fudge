@@ -523,7 +523,7 @@
                                         <connections>
                                             <outlet property="createdByLabel" destination="HK3-rP-5gb" id="eCN-Gj-1QO"/>
                                             <outlet property="recipeNameLabel" destination="IpA-4p-ROA" id="7gC-to-MZT"/>
-                                            <segue destination="g8X-uh-KnB" kind="show" id="LZ7-QH-e2S"/>
+                                            <segue destination="g8X-uh-KnB" kind="show" identifier="recipeDetailSegue" id="LZ7-QH-e2S"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -570,13 +570,13 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yAv-oN-bI9">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yAv-oN-bI9">
                                 <rect key="frame" x="10" y="187" width="290" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="B2n-aG-FnD">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="B2n-aG-FnD">
                                 <rect key="frame" x="10" y="376" width="299" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
