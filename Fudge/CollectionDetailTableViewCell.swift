@@ -15,13 +15,17 @@ class CollectionDetailTableViewCell: UITableViewCell {
     
     var recipe: Recipe!{
         didSet{
-            createdByLabel.text = recipe.creator?.username
+            //TODO: fix this so it displays the name properly
+            createdByLabel.text = ""
             recipeNameLabel.text = recipe.name
         }
     }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        createdByLabel.preferredMaxLayoutWidth = createdByLabel.frame.size.width
+        recipeNameLabel.preferredMaxLayoutWidth = recipeNameLabel.frame.size.width
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

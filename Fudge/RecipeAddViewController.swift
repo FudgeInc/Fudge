@@ -17,7 +17,9 @@ class RecipeAddViewController: UIViewController {
     
     @IBOutlet weak var stepsTextView: UITextView!
     
-    var collectionName: String?
+    @IBOutlet weak var chooseCollectionButton: UIButton!
+    
+    var collection:Collection?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +29,20 @@ class RecipeAddViewController: UIViewController {
         self.stepsTextView.layer.borderWidth = 1
         self.stepsTextView.layer.borderColor = UIColor.blackColor().CGColor
         
+        //if there's a collection from the select collection set it as the button label
+        if let collection = collection {
+            chooseCollectionButton.setTitle(collection.name, forState: UIControlState.Normal)
+        }
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        //if there's a collection from the select collection set it as the button label
+        collection = Collection.selectedCollection
+        if let collection = collection {
+            print("changing butotn text")
+            chooseCollectionButton.setTitle(collection.name, forState: UIControlState.Normal)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,8 +64,88 @@ class RecipeAddViewController: UIViewController {
             loadingNotification.mode = MBProgressHUDMode.Indeterminate
             loadingNotification.labelText = "Uploading to Fudge"
             //TODO: fix this so we have a description field
+            
+            let recipe = PFObject(className: "recipe")
+            
+            recipe["name"] = title
+            recipe["steps"] = steps
+            recipe["Ingredients"] = ingredients
+            recipe["Description"] = title
+            recipe["Creator"] = PFUser.currentUser() //do it by username
+            
+            recipe.saveInBackgroundWithBlock({ (completed:Bool, error:NSError?) in
+                if(completed){
+                    
+                    //now update the collection
+                    if (self.collection != nil){
+                        //get the collection from the server and update it
+                        let query = PFQuery(className: "Collection")
+                        query.getObjectInBackgroundWithId(self.collection!.collectionId!, block: { (result:PFObject?, error:NSError?) in
+                            if let error = error{
+                                NSLog(error.localizedDescription)
+                            }else{
+                                //append the object id of the recipe to the array, then add i
+                                var arr = result!["recipes"] as! [String]
+                                arr.append(recipe.objectId!)
+                                //TODO: there's a better way to do this
+                                
+                                //save the updated collection
+                                
+                                result!["recipes"] = arr
+                                result?.saveInBackgroundWithBlock({ (completed:Bool, error:NSError?) in
+                                    if(completed){
+                                        MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
+                                        print("success")
+                                        //TODO: perform segue back to collection view
+                                        
+                                        self.titleField.text = ""
+                                        self.ingredientsTextView.text = ""
+                                        self.stepsTextView.text = ""
+                                        self.performSegueWithIdentifier("AddRecipeSegue", sender: nil)
+                                    }else{
+                                        if let error = error{
+                                            NSLog(error.localizedDescription)
+                                        }
+                                    }
+                                })
+                            }
+                        })
+                    }else{
+                        MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
+                        print("success")
+                        //TODO: perform segue back to collection view
+                        
+                        self.titleField.text = ""
+                        self.ingredientsTextView.text = ""
+                        self.stepsTextView.text = ""
+                        self.performSegueWithIdentifier("AddRecipeSegue", sender: nil)
+                    }
+                    
+                }
+                else{
+                    print(error?.localizedDescription)
+                    //TODO: display error message perform segue
+                }
+            })
+            /*
+
             Recipe.postRecipe(withSteps: steps, withIngredients: ingredients, withDescription: title,name:title, withCompletion: { (completed: Bool, error: NSError?) in
                 if(completed){
+                    
+                     //now update the collection
+                    if (self.collection != nil){
+                        //get the collection from the server and update it
+                        let query = PFQuery(className: "Collection")
+                        query.getObjectInBackgroundWithId(self.collection!.collectionId!, block: { (result:PFObject?, error:NSError?) in
+                            if let error = error{
+                                NSLog(error.localizedDescription)
+                            }else{
+                                //append the object id of the recipe to the array, then add i
+                                var arr = result!["recipes"] as! [Int]
+                                arr.append(recipe.objectId)
+                            }
+                        })
+                    }else{
                     MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
                     print("success")
                     //TODO: perform segue back to collection view
@@ -58,16 +154,16 @@ class RecipeAddViewController: UIViewController {
                     self.ingredientsTextView.text = ""
                     self.stepsTextView.text = ""
                     self.performSegueWithIdentifier("AddRecipeSegue", sender: nil)
+                    }
 
                 }
                 else{
                     print(error?.localizedDescription)
                     //TODO: display error message perform segue
                 }
-            })
+            })*/
             
         }
-
     }
     //this will be to add the recipe to a collection
 

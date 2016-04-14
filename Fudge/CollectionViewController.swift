@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import MBProgressHUD
 
 class CollectionViewController: UIViewController, UITableViewDelegate,UITableViewDataSource {
     //TODO: Implement tableview
@@ -16,6 +17,7 @@ class CollectionViewController: UIViewController, UITableViewDelegate,UITableVie
     var actionSheet: UIAlertController!
     var collections: [Collection]! //the users collections to display in the table
     var user:PFUser! //TODO: we need to pass this in from login
+    var hud = MBProgressHUD()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +27,10 @@ class CollectionViewController: UIViewController, UITableViewDelegate,UITableVie
         //set the delegate and datasource for tableview
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.rowHeight = UITableViewAutomaticDimension //set thiis so autolayout will decide the height
+        tableView.estimatedRowHeight = 200
+        
+        //TODO: set the HUD color
         
         //set up the action sheet
         actionSheet = UIAlertController(title: "Add", message: "Add a Collection or Recipe", preferredStyle: .ActionSheet)
@@ -49,7 +55,9 @@ class CollectionViewController: UIViewController, UITableViewDelegate,UITableVie
         }
         
         actionSheet.addAction(addRecipeButton)
-        self.collections = []
+        
+        hud.show(true)
+        
         //Now we get the collections the user has and add them to the collections array
         // Or using NSPredicate
         let userString = (PFUser.currentUser()?.username!)! as String
@@ -61,9 +69,12 @@ class CollectionViewController: UIViewController, UITableViewDelegate,UITableVie
                 //if there's an error log the error and make collections an empty array
                 NSLog(error.localizedDescription)
             }else{
+                self.hud.hide(true)
                 if let result = result{
                     //if there's no error proceed as usual
                     self.collections = Collection.getCollectionsFromArray(result)
+                    //set the collection class variable
+                    Collection.collections = self.collections
                     self.tableView.reloadData()
                     }
           

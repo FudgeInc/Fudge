@@ -16,6 +16,8 @@
 		8C7308D81C866AB0000E5588 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C7308D71C866AB0000E5588 /* Assets.xcassets */; };
 		8C7308DB1C866AB0000E5588 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C7308D91C866AB0000E5588 /* LaunchScreen.storyboard */; };
 		C91525241CBD699200D9A694 /* CollectionDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91525231CBD699200D9A694 /* CollectionDetailTableViewCell.swift */; };
+		C91525261CBDABD000D9A694 /* CollectionSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91525251CBDABD000D9A694 /* CollectionSelectionViewController.swift */; };
+		C91525291CBDAC1900D9A694 /* CollectionSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91525281CBDAC1900D9A694 /* CollectionSelectionTableViewCell.swift */; };
 		C981FE811CAB788200839ED3 /* AddCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C981FE801CAB788200839ED3 /* AddCollectionViewController.swift */; };
 		C9C031851CA8576A003704DC /* CollectionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C031841CA8576A003704DC /* CollectionDetailViewController.swift */; };
 		C9C031871CA85780003704DC /* RecipeAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C031861CA85780003704DC /* RecipeAddViewController.swift */; };
@@ -38,6 +40,8 @@
 		8C7308DC1C866AB0000E5588 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		975E4A0FB9F00EF16C526C5A /* Pods-Fudge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fudge.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fudge/Pods-Fudge.release.xcconfig"; sourceTree = "<group>"; };
 		C91525231CBD699200D9A694 /* CollectionDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionDetailTableViewCell.swift; sourceTree = "<group>"; };
+		C91525251CBDABD000D9A694 /* CollectionSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionSelectionViewController.swift; sourceTree = "<group>"; };
+		C91525281CBDAC1900D9A694 /* CollectionSelectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionSelectionTableViewCell.swift; sourceTree = "<group>"; };
 		C981FE801CAB788200839ED3 /* AddCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCollectionViewController.swift; sourceTree = "<group>"; };
 		C9C031841CA8576A003704DC /* CollectionDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionDetailViewController.swift; sourceTree = "<group>"; };
 		C9C031861CA85780003704DC /* RecipeAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeAddViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +74,7 @@
 				C9C031861CA85780003704DC /* RecipeAddViewController.swift */,
 				C9C031881CA8578C003704DC /* RecipeViewController.swift */,
 				C981FE801CAB788200839ED3 /* AddCollectionViewController.swift */,
+				C91525251CBDABD000D9A694 /* CollectionSelectionViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -100,12 +105,21 @@
 				8C7308D01C866AB0000E5588 /* AppDelegate.swift */,
 				8C7308D41C866AB0000E5588 /* Main.storyboard */,
 				8C7308D71C866AB0000E5588 /* Assets.xcassets */,
+				C91525271CBDABEF00D9A694 /* Table Cells */,
 				8C7308D91C866AB0000E5588 /* LaunchScreen.storyboard */,
-				C9C0318A1CA86092003704DC /* CollectionTableViewCell.swift */,
 				8C7308DC1C866AB0000E5588 /* Info.plist */,
-				C91525231CBD699200D9A694 /* CollectionDetailTableViewCell.swift */,
 			);
 			path = Fudge;
+			sourceTree = "<group>";
+		};
+		C91525271CBDABEF00D9A694 /* Table Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C91525231CBD699200D9A694 /* CollectionDetailTableViewCell.swift */,
+				C9C0318A1CA86092003704DC /* CollectionTableViewCell.swift */,
+				C91525281CBDAC1900D9A694 /* CollectionSelectionTableViewCell.swift */,
+			);
+			name = "Table Cells";
 			sourceTree = "<group>";
 		};
 		C9C0318C1CA866B9003704DC /* Models */ = {
@@ -258,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C981FE811CAB788200839ED3 /* AddCollectionViewController.swift in Sources */,
+				C91525261CBDABD000D9A694 /* CollectionSelectionViewController.swift in Sources */,
 				00BC66EA1CA84EBC00C214DA /* LoginViewController.swift in Sources */,
 				C9C031901CA86731003704DC /* Collection.swift in Sources */,
 				C9C031851CA8576A003704DC /* CollectionDetailViewController.swift in Sources */,
@@ -266,6 +281,7 @@
 				00BC66E61CA84CC500C214DA /* CollectionViewController.swift in Sources */,
 				00BC66E81CA84DE000C214DA /* FriendsViewController.swift in Sources */,
 				C91525241CBD699200D9A694 /* CollectionDetailTableViewCell.swift in Sources */,
+				C91525291CBDAC1900D9A694 /* CollectionSelectionTableViewCell.swift in Sources */,
 				C9C0318E1CA86723003704DC /* Recipe.swift in Sources */,
 				8C7308D11C866AB0000E5588 /* AppDelegate.swift in Sources */,
 				C9C0318B1CA86092003704DC /* CollectionTableViewCell.swift in Sources */,

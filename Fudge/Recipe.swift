@@ -32,7 +32,7 @@ class Recipe: NSObject {
             //otherwise make a blank url
             picUrl = NSURL()
         }
-        name = obj["Name"] as? String
+        name = obj["name"] as? String
         
         desc = obj["Description"] as? String
         //TODO: Make sure we can cast the array like this
@@ -57,7 +57,7 @@ class Recipe: NSObject {
         recipe["steps"] = steps
         recipe["Ingredients"] = ingredients
         recipe["Description"] = title
-        recipe["Creator"] = PFUser.currentUser()
+        recipe["Creator"] = PFUser.currentUser()?.username //do it by username
         
         //Figure out how to generate a recipe ID maybe a global total of recipes submitted
         
