@@ -10,6 +10,12 @@ import UIKit
 
 class RecipeViewController: UIViewController {
 
+    @IBOutlet weak var recipeNameLabel: UILabel!
+    @IBOutlet weak var createdByLabel: UILabel!
+    
+    @IBOutlet weak var ingredientsTextView: UITextView!
+    
+    @IBOutlet weak var stepsTextView: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -44,6 +44,12 @@ class RecipeAddViewController: UIViewController {
             chooseCollectionButton.setTitle(collection.name, forState: UIControlState.Normal)
         }
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        if let collection = collection {
+            chooseCollectionButton.setTitle(collection.name, forState: UIControlState.Normal)
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -71,7 +77,7 @@ class RecipeAddViewController: UIViewController {
             recipe["steps"] = steps
             recipe["Ingredients"] = ingredients
             recipe["Description"] = title
-            recipe["Creator"] = PFUser.currentUser() //do it by username
+            recipe["Creator"] = PFUser.currentUser()?.username //do it by username
             
             recipe.saveInBackgroundWithBlock({ (completed:Bool, error:NSError?) in
                 if(completed){
