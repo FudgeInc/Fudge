@@ -91,11 +91,10 @@ class AddFriendsViewController: UIViewController, UITableViewDataSource, UITable
         
         
         let contact = contacts[indexPath.row]
+        cell.contact = contact
         
         let fullName = formatter.stringFromContact(contact)!
         let nameArray = fullName.componentsSeparatedByString(" ")
-        
-        print(nameArray)
         
         if nameArray.count == 1 {
             cell.firstName.text = nameArray[0]

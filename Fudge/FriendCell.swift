@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import Contacts
 
 class FriendCell: UITableViewCell {
     
     @IBOutlet weak var firstName: UILabel!
     @IBOutlet weak var middleName: UILabel!
     @IBOutlet weak var lastName: UILabel!
+    
+    var contact: CNContact!
     
     override func awakeFromNib() {
         super.awakeFromNib()
