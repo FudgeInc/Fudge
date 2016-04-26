@@ -14,13 +14,13 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 - [x] Users can add recipes via an in app interface
 - [x] Recipes are stored on a Parse instance
 - [x] User can make a collaborative recipe collection using the user interaface
-- [ ] User can authenitcate/add a user(s) to edit collaborate on a recipe book
+- [x] User can authenitcate/add a user(s) to edit collaborate on a recipe book
 
 ## Nice to Have
 - [ ] Extension to add recipes from the web
 - [ ] Parsing recipes from the web to put them in a nicer format
 - [ ] Add Images to the recipes
-- [ ] Friends lists from facebook/contacts
+- [x] Friends lists from facebook/contacts
 - [ ] Ratings for recipes
 - [ ] Ability to follow other users and see their recipes
 - [ ] Ability to "fork" and modify another user's recipes
