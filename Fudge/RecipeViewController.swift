@@ -24,7 +24,10 @@ class RecipeViewController: UIViewController {
         super.viewDidLoad()
         
         print(recipe.steps)
-    
+        recipeNameLabel.text = recipe.desc
+        createdByLabel.text = recipe.creator
+        stepsTextView.text = recipe.steps!
+        ingredientsTextView.text = recipe.ingredients!
         
         // Do any additional setup after loading the view.
     }

@@ -15,9 +15,9 @@ class Recipe: NSObject {
     var name: String?
     var picUrl: NSURL?
     var desc: String?
-    var steps: [String]? //the steps you need to take to make the recipe
-    var ingredients: [String]?
-    var creator: PFUser? //the user that made the recipe
+    var steps: String? //the steps you need to take to make the recipe
+    var ingredients: String?
+    var creator: String? //the user that made the recipe
     var collections:[Int]? //the Id's of the collections the user is in
     var url: NSURL? //the url for an externally hosted recipe
     
@@ -36,9 +36,9 @@ class Recipe: NSObject {
         
         desc = obj["Description"] as? String
         //TODO: Make sure we can cast the array like this
-        steps = obj["Steps"] as? [String]
-        ingredients = obj["Ingredients"] as? [String]
-        creator = obj["Creator"] as? PFUser
+        steps = obj["steps"] as? String
+        ingredients = obj["Ingredients"] as? String
+        creator = obj["Creator"] as? String
         collections = obj["Collections"] as? [Int]
         
         //check for the external url, if it doesn't exist make it an empty string

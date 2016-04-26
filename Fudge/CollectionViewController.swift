@@ -57,6 +57,14 @@ class CollectionViewController: UIViewController, UITableViewDelegate,UITableVie
         actionSheet.addAction(addRecipeButton)
         
         hud.show(true)
+        loadCollectionData()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        loadCollectionData()
+    }
+    
+    func loadCollectionData(){
         
         //Now we get the collections the user has and add them to the collections array
         // Or using NSPredicate
@@ -76,13 +84,12 @@ class CollectionViewController: UIViewController, UITableViewDelegate,UITableVie
                     //set the collection class variable
                     Collection.collections = self.collections
                     self.tableView.reloadData()
-                    }
-          
                 }
+                
             }
         }
-    
-    
+
+    }
     /*******************/
     /*TableView Methods*/
     /*******************/
