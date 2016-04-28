@@ -14,9 +14,13 @@ class AddFriendsViewController: UIViewController, UITableViewDataSource, UITable
     @IBOutlet weak var tableView: UITableView!
     
     var contacts: [CNContact] = []
+    var selectedCell: CNContact!
+    var friendList: [CNContact] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //self.navigationController!.navigationBar.topItem!.title = "Add Friends";
         
         // Do any additional setup after loading the view.
         tableView.dataSource = self
@@ -89,7 +93,6 @@ class AddFriendsViewController: UIViewController, UITableViewDataSource, UITable
         let formatter = CNContactFormatter()
         formatter.style = .FullName
         
-        
         let contact = contacts[indexPath.row]
         cell.contact = contact
         
@@ -113,14 +116,37 @@ class AddFriendsViewController: UIViewController, UITableViewDataSource, UITable
         return cell
     }
     
-    /*
-     // MARK: - Navigation
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        selectedCell = contacts[indexPath.row] as CNContact
+        if friendList.contains(selectedCell) {
+
+            let alert = UIAlertController(title: "Duplicate Friend", message: "You have already added this friend to your list.", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+            
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+            
+        } else {
+            friendList.append(selectedCell)
+            self.performSegueWithIdentifier("friendSegue", sender: nil)
+        }
+        
+    }
+    
+    // MARK: - Navigation
      
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
+        
+        let friendsViewController = segue.destinationViewController as! FriendsViewController
+        
+        friendsViewController.friends = friendList;
+        print(friendsViewController.friends.count)
+        
+    }
     
 }

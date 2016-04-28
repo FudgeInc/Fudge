@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import Contacts
 
 class FriendsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var friends: [NSDictionary]?
+    var friends: [CNContact] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,8 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 120
         
+        tableView.reloadData()
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -31,44 +34,51 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let friends = friends {
-            return friends.count
-        } else {
-            return 0
-        }
+        print(friends.count)
+        return friends.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("FriendCell", forIndexPath: indexPath) as! FriendCell
         
-        let friend = friends![indexPath.row]
-        /*
-         let title = movie["title"] as! String
-         let overview = movie["overview"] as! String
-         cell.titleLabel.text = title
-         cell.overviewLabel.text = overview
-         
-         let baseUrl = "http://image.tmdb.org/t/p/w500"
-         if let posterPath = movie["poster_path"] as? String {
-         let imageUrl = NSURL(string: baseUrl + posterPath)
-         cell.posterView.setImageWithURL(imageUrl!)
-         }
-         
-         let backgroundView = UIView()
-         backgroundView.backgroundColor = UIColor.grayColor()
-         cell.selectedBackgroundView = backgroundView
-         */
+        let formatter = CNContactFormatter()
+        formatter.style = .FullName
+        
+        let friend = friends[indexPath.row]
+        cell.contact = friend
+        
+        let fullName = formatter.stringFromContact(friend)!
+        let nameArray = fullName.componentsSeparatedByString(" ")
+        
+        if nameArray.count == 1 {
+            cell.firstName.text = nameArray[0]
+            cell.middleName.text = ""
+            cell.lastName.text = ""
+        } else if nameArray.count == 2 {
+            cell.firstName.text = nameArray[0]
+            cell.middleName.text = nameArray[1]
+            cell.lastName.text = ""
+        } else if nameArray.count == 3 {
+            cell.firstName.text = nameArray[0]
+            cell.middleName.text = nameArray[1]
+            cell.lastName.text = nameArray[2]
+        }
+        
         return cell
     }
     
-    /*
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
      // Get the new view controller using segue.destinationViewController.
      // Pass the selected object to the new view controller.
+        
+        let addFriendsViewController = segue.destinationViewController as! AddFriendsViewController
+        
+        addFriendsViewController.friendList = friends;
+        print(addFriendsViewController.friendList.count)
+        
      }
-     */
     
 }
