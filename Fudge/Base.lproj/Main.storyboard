@@ -625,30 +625,28 @@
                                         <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TUC-WB-sIR" id="HYw-AJ-vwQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Recipe Name" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IpA-4p-ROA">
-                                                    <rect key="frame" x="8" y="0.0" width="192" height="32"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Created" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HK3-rP-5gb">
+                                                    <rect key="frame" x="248" y="2" width="64" height="22"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="18"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Created" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HK3-rP-5gb">
-                                                    <rect key="frame" x="224" y="0.0" width="88" height="32"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="26"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" misplaced="YES" text="Recipe Name" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IpA-4p-ROA">
+                                                    <rect key="frame" x="8" y="0.0" width="126" height="26"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="HK3-rP-5gb" secondAttribute="trailing" constant="8" id="8tc-YS-Fy5"/>
-                                                <constraint firstItem="HK3-rP-5gb" firstAttribute="leading" secondItem="IpA-4p-ROA" secondAttribute="trailing" constant="24" id="DDC-S2-DV5"/>
-                                                <constraint firstItem="IpA-4p-ROA" firstAttribute="top" secondItem="HYw-AJ-vwQ" secondAttribute="top" id="Efi-Ou-b11"/>
-                                                <constraint firstItem="HK3-rP-5gb" firstAttribute="centerY" secondItem="IpA-4p-ROA" secondAttribute="centerY" id="Q64-Ij-m9y"/>
-                                                <constraint firstItem="IpA-4p-ROA" firstAttribute="leading" relation="lessThanOrEqual" secondItem="HYw-AJ-vwQ" secondAttribute="leading" constant="8" id="UeA-Jf-3Ie"/>
-                                                <constraint firstItem="HK3-rP-5gb" firstAttribute="top" secondItem="HYw-AJ-vwQ" secondAttribute="top" id="jqJ-z8-8Oi"/>
-                                                <constraint firstAttribute="bottom" secondItem="HK3-rP-5gb" secondAttribute="bottom" constant="11.5" id="qDf-mi-iMQ"/>
+                                                <constraint firstAttribute="trailing" secondItem="HK3-rP-5gb" secondAttribute="trailing" constant="8" id="2sD-E6-WrS"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="IpA-4p-ROA" secondAttribute="bottom" constant="8" id="L1O-aV-KCU"/>
+                                                <constraint firstItem="HK3-rP-5gb" firstAttribute="top" secondItem="HYw-AJ-vwQ" secondAttribute="top" constant="2" id="XWE-Dz-N1f"/>
+                                                <constraint firstItem="HK3-rP-5gb" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="IpA-4p-ROA" secondAttribute="trailing" constant="8" id="e4b-IT-Fqf"/>
+                                                <constraint firstItem="IpA-4p-ROA" firstAttribute="leading" secondItem="HYw-AJ-vwQ" secondAttribute="leading" constant="8" id="hST-ZR-U4a"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

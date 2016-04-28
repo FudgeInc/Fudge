@@ -24,7 +24,10 @@ class CollectionDetailViewController: UIViewController, UITableViewDelegate, UIT
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
-        
+   
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 120
+
         hud.show(true)
         //iterate over the and make new pfobjects
         var objectArr = [PFObject]()
