@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 import MBProgressHUD
-class RecipeAddViewController: UIViewController {
+class RecipeAddViewController: UIViewController, UITextViewDelegate {
 
     @IBOutlet weak var titleField: UITextField!
     
@@ -29,11 +29,21 @@ class RecipeAddViewController: UIViewController {
         self.stepsTextView.layer.borderWidth = 1
         self.stepsTextView.layer.borderColor = UIColor.blackColor().CGColor
         
+        self.stepsTextView.delegate = self
+        self.ingredientsTextView.delegate = self
         //if there's a collection from the select collection set it as the button label
         if let collection = collection {
             chooseCollectionButton.setTitle(collection.name, forState: UIControlState.Normal)
         }
         
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    //Calls this function when the tap is recognized.
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -59,6 +69,7 @@ class RecipeAddViewController: UIViewController {
     @IBAction func onCollectionPressed(sender: AnyObject) {
     }
     
+
     @IBAction func onsubmitPressed(sender: AnyObject) {
         if(titleField.text! != "" && ingredientsTextView.text! != "" && stepsTextView.text! != "" ){
             

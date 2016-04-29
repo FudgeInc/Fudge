@@ -14,25 +14,34 @@
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fudge" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="flL-lq-reM">
-                                <rect key="frame" x="83" y="128" width="154" height="63"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fudge" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="flL-lq-reM">
+                                <rect key="frame" x="111" y="146" width="154" height="63"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="52"/>
                                 <color key="textColor" red="0.90588235289999997" green="0.070588235289999995" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="FudgeInc © 2016" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MTd-O6-TtI">
-                                <rect key="frame" x="104" y="531" width="112" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FudgeInc © 2016" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MTd-O6-TtI">
+                                <rect key="frame" x="131" y="576" width="112" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.90588235289999997" green="0.070588235289999995" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="MTd-O6-TtI" firstAttribute="top" secondItem="flL-lq-reM" secondAttribute="bottom" constant="367" id="1pb-jk-Udp"/>
+                            <constraint firstItem="flL-lq-reM" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="126" id="L4f-RO-m8L"/>
+                            <constraint firstItem="flL-lq-reM" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="111" id="ZVe-QA-RFo"/>
+                            <constraint firstAttribute="trailing" secondItem="flL-lq-reM" secondAttribute="trailing" constant="110" id="aX4-Ek-AUU"/>
+                            <constraint firstAttribute="trailing" secondItem="MTd-O6-TtI" secondAttribute="trailing" constant="132" id="nlD-BB-lEQ"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="MTd-O6-TtI" secondAttribute="bottom" constant="74" id="tIL-Y2-Ok0"/>
+                            <constraint firstItem="MTd-O6-TtI" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="131" id="uk4-aW-fRn"/>
+                        </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
